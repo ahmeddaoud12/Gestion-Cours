@@ -1,0 +1,106 @@
+﻿@model RegisterViewModel
+@{
+    ViewData["Title"] = "Register";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> ManagementProjet</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/Login.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
+    <style>
+        .container-fluid {
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+        .tilteinput {
+            float: left;
+            color: white;
+            font-size: 15px;
+            padding-bottom: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg">
+        <div class="container-fluid">
+            <center>
+                <div class="vertical-center">
+                    <div class="col-lg-4 col-md-6 col-sm-8 col-10 backdiv">
+                        <form asp-route-returnUrl="@ViewData["ReturnUrl"]" method="post">
+                            <h4 class="title1">
+                                Creer votre compte.
+                            </h4>
+                            <div asp-validation-summary="All" class="text-danger"></div>
+                            <div class="form-group">
+                                <label asp-for="UserName" class="tilteinput"></label>
+                                <input asp-for="UserName" class="form-control input1" placeholder="UserName" />
+                                <div class="icon3">
+                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                </div>
+                                <span asp-validation-for="UserName" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="PhoneNumber" class="tilteinput"></label>
+                                <input asp-for="PhoneNumber" class="form-control input1" placeholder="PhoneNumber" />
+                                <div class="icon3">
+                                    <i class="fa fa-phone" aria-hidden="true"></i>
+                                </div>
+                                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Email" class="tilteinput"></label>
+                                <input asp-for="Email" class="form-control input1" placeholder="Email" />
+                                <div class="icon3">
+                                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                                </div>
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="Password" class="tilteinput"></label>
+                                <input asp-for="Password" class="form-control input1" placeholder="Password" />
+                                <div class="icon3">
+                                    <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                                </div>
+                                <span asp-validation-for="Password" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="ConfirmPassword" class="tilteinput"></label>
+                                <input asp-for="ConfirmPassword" class="form-control input1" placeholder="Confirm Password" />
+                                <div class="icon3">
+                                    <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                                </div>
+                                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <div class="ro">
+
+                                </div>
+                                <button type="submit" class="btn buttonLog" style="width:120px">
+                                    <i class="fa fa-user-plus" aria-hidden="true"></i>
+                                    Register
+                                </button>
+                                <a asp-action="Login" class="btn buttonLog" style="width:120px">
+                                    <i class="fa fa-sign-in" aria-hidden="true"></i>
+                                    login
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </center>
+        </div>
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery/dist/popper.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+</body>
+</html>

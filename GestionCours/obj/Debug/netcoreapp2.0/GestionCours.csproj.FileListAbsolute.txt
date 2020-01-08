@@ -1,0 +1,12 @@
+C:\Users\Radwa\source\repos\GestionCours\GestionCours\bin\Debug\netcoreapp2.0\GestionCours.deps.json
+C:\Users\Radwa\source\repos\GestionCours\GestionCours\bin\Debug\netcoreapp2.0\GestionCours.runtimeconfig.json
+C:\Users\Radwa\source\repos\GestionCours\GestionCours\bin\Debug\netcoreapp2.0\GestionCours.runtimeconfig.dev.json
+C:\Users\Radwa\source\repos\GestionCours\GestionCours\bin\Debug\netcoreapp2.0\GestionCours.dll
+C:\Users\Radwa\source\repos\GestionCours\GestionCours\bin\Debug\netcoreapp2.0\GestionCours.pdb
+C:\Users\Radwa\source\repos\GestionCours\GestionCours\obj\Debug\netcoreapp2.0\GestionCours.csproj.CoreCompileInputs.cache
+C:\Users\Radwa\source\repos\GestionCours\GestionCours\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+C:\Users\Radwa\source\repos\GestionCours\GestionCours\obj\Debug\netcoreapp2.0\GestionCours.AssemblyInfoInputs.cache
+C:\Users\Radwa\source\repos\GestionCours\GestionCours\obj\Debug\netcoreapp2.0\GestionCours.AssemblyInfo.cs
+C:\Users\Radwa\source\repos\GestionCours\GestionCours\obj\Debug\netcoreapp2.0\GestionCours.dll
+C:\Users\Radwa\source\repos\GestionCours\GestionCours\obj\Debug\netcoreapp2.0\GestionCours.pdb
+C:\Users\Radwa\source\repos\GestionCours\GestionCours\obj\Debug\netcoreapp2.0\GestionCours.csprojAssemblyReference.cache

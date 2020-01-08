@@ -1,0 +1,63 @@
+﻿@model GestionCours.Models.AdministrationViewModels.CreateRoleViewModel
+@{
+    ViewData["Title"] = "Create Role";
+}
+
+<!-- Content Header (Page header) -->
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0 text-dark"></h1>
+            </div><!-- /.col -->
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Roles</a></li>
+                    <li class="breadcrumb-item active">Create</li>
+                </ol>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
+<!-- Main content -->
+<section class="content">
+    <div class="container-fluid">
+        <br />
+        <br />
+        <br />
+        <center>
+            <div class="col-md-6">
+                <div class="card card-danger">
+                    <div class="card-header">
+                        <h3 class="card-title">Creation Nouveau Roles</h3>
+                    </div>
+                    <div class="card-body">
+                        <form asp-route-returnUrl="@ViewData["ReturnUrl"]" method="post">
+                            <div class="row">
+                                <div class="col-12">
+                                    <label asp-for="RoleName" style="float:left">Role Name</label>
+                                    <input asp-for="RoleName" class="form-control" placeholder="Role Name">
+                                    <span asp-validation-for="RoleName" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <br />
+                            <button type="submit" class="btn btn-outline-warning"> Creation Role</button>
+                        </form>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+        </center>
+    </div>
+    <!-- /.container-fluid -->
+</section>
+<!-- /.content -->
+
+
+
+
+
+
+
