@@ -13673,11 +13673,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Radwa\\source\\repos\\GestionCours\\GestionCours\\GestionCours.csproj",
+      "projectUniqueName": "E:\\projects\\GestionCours\\GestionCours\\GestionCours.csproj",
       "projectName": "GestionCours",
-      "projectPath": "C:\\Users\\Radwa\\source\\repos\\GestionCours\\GestionCours\\GestionCours.csproj",
+      "projectPath": "E:\\projects\\GestionCours\\GestionCours\\GestionCours.csproj",
       "packagesPath": "C:\\Users\\Radwa\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Radwa\\source\\repos\\GestionCours\\GestionCours\\obj\\",
+      "outputPath": "E:\\projects\\GestionCours\\GestionCours\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

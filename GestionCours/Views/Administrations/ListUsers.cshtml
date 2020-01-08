@@ -41,22 +41,22 @@
                                 <div class="card-footer p-0">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
-                                            <a href="#" class="nav-link">
+                                            <a asp-action="EditUser" asp-controller="Administrations" asp-route-id="@user.Id" class="nav-link">
                                                 Phone Number <span class="float-right badge bg-primary padbad">@user.PhoneNumber</span>
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="#" class="nav-link">
+                                            <a asp-action="EditUser" asp-controller="Administrations" asp-route-id="@user.Id" class="nav-link">
                                                 Email Confirmed <span class="float-right badge bg-info padbad">@user.EmailConfirmed</span>
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="#" class="nav-link">
+                                            <a asp-action="EditUser" asp-controller="Administrations" asp-route-id="@user.Id" class="nav-link">
                                                 Two Facture Projects <span class="float-right badge bg-success padbad">@user.TwoFactorEnabled</span>
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="#" class="nav-link">
+                                            <a asp-action="EditUser" asp-controller="Administrations" asp-route-id="@user.Id" class="nav-link">
                                                 Recent Connect <span class="float-right badge bg-danger padbad">@user.LockoutEnd</span>
                                             </a>
                                         </li>

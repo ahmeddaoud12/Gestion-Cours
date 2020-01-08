@@ -255,6 +255,9 @@ namespace GestionCours.Controllers
             {
                 Id = user.Id,
                 Email = user.Email,
+                UserName = user.UserName,
+                PhoneNumber = user.PhoneNumber,
+                EmailConfirmed = user.EmailConfirmed,
                 Claims = userClaims.Select(c => c.Value).ToList(),
                 Roles = userRoles
             };
@@ -275,7 +278,9 @@ namespace GestionCours.Controllers
             else
             {
                 user.Email = model.Email;
-
+                user.UserName = model.UserName;
+                user.PhoneNumber = model.PhoneNumber;
+                user.EmailConfirmed = model.EmailConfirmed;
                 var result = await userManager.UpdateAsync(user);
 
                 if (result.Succeeded)

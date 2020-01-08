@@ -15,9 +15,22 @@ namespace GestionCours.Models.AdministrationViewModels
         }
 
         public string Id { get; set; }
+
         [Required]
         [EmailAddress]
         public string Email { get; set; }
+
+        [Required]
+        [StringLength(20)]
+        [Display(Name = "User Name")]
+        public string UserName { get; set; }
+
+        [Required]
+        [DataType(DataType.PhoneNumber)]
+        [Display(Name = "Phone Number")]
+        public string PhoneNumber { get; set; }
+
+        public bool EmailConfirmed { get; set; }
 
         public List<string> Claims { get; set; }
 
