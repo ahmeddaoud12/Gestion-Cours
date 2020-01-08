@@ -13,6 +13,10 @@ using Microsoft.Extensions.Options;
 using GestionCours.Models;
 using GestionCours.Models.AccountViewModels;
 using GestionCours.Services;
+using Microsoft.Extensions.Configuration;
+using System.IO;
+using System.Net.Mail;
+using System.Net;
 
 namespace GestionCours.Controllers
 {
@@ -59,6 +63,7 @@ namespace GestionCours.Controllers
             ViewData["ReturnUrl"] = returnUrl;
             if (ModelState.IsValid)
             {
+
                 // This doesn't count login failures towards account lockout
                 // To enable password failures to trigger account lockout, set lockoutOnFailure: true
                 var result = await _signInManager.PasswordSignInAsync(model.UserName, model.Password, model.RememberMe, lockoutOnFailure: false);
@@ -220,16 +225,53 @@ namespace GestionCours.Controllers
             ViewData["ReturnUrl"] = returnUrl;
             if (ModelState.IsValid)
             {
+                var builder = new ConfigurationBuilder()
+                                    .SetBasePath(Directory.GetCurrentDirectory())
+                                    .AddJsonFile("appsettings.json");
+                var configuration = builder.Build();
+
                 var user = new ApplicationUser { UserName = model.UserName, PhoneNumber = model.PhoneNumber, Email = model.Email };
                 var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User created a new account with password.");
 
-                    var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
-                    var callbackUrl = Url.EmailConfirmationLink(user.Id, code, Request.Scheme);
-                    await _emailSender.SendEmailConfirmationAsync(model.Email, callbackUrl);
+                    var ctoken = _userManager.GenerateEmailConfirmationTokenAsync(user).Result;
+                    string ctokenlink = Url.Action("ConfirmEmail","Account",new {
+                        userId = user.Id,
+                        token = ctoken
+                    },protocol:HttpContext.Request.Scheme);
 
+                    var Mess = "Pour Confirmer Email Cliquer Sur lien :" + "\n" + "  " + ctokenlink;
+                    MailMessage msg = new MailMessage();
+                    msg.From = new MailAddress("daouda003@gmail.com");
+                    msg.To.Add(user.Email);
+                    msg.Subject = "Contact ! " + DateTime.Now.ToString();
+                    msg.Body = Mess;
+                    SmtpClient client = new SmtpClient();
+                    client.UseDefaultCredentials = true;
+                    client.Host = "smtp.gmail.com";
+                    client.Port = 587;
+                    client.EnableSsl = true;
+                    client.DeliveryMethod = SmtpDeliveryMethod.Network;
+                    client.Credentials = new NetworkCredential(configuration["Credentials:Mail"], configuration["Credentials:password"]);
+                    client.Timeout = 20000;
+                    try
+                    {
+                        client.Send(msg);
+                    }
+                    catch
+                    {
+                        return View(model);
+                    }
+                    finally
+                    {
+                        msg.Dispose();
+                    }
+                    //var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+                    //var callbackUrl = Url.EmailConfirmationLink(user.Id, code, Request.Scheme);
+                    //await _emailSender.SendEmailConfirmationAsync(model.Email, callbackUrl);
+                    await _userManager.AddToRoleAsync(user, "Etudiant");
                     await _signInManager.SignInAsync(user, isPersistent: false);
                     _logger.LogInformation("User created a new account with password.");
                     return RedirectToLocal(returnUrl);
@@ -331,9 +373,9 @@ namespace GestionCours.Controllers
 
         [HttpGet]
         [AllowAnonymous]
-        public async Task<IActionResult> ConfirmEmail(string userId, string code)
+        public async Task<IActionResult> ConfirmEmail(string userId, string token)
         {
-            if (userId == null || code == null)
+            if (userId == null || token == null)
             {
                 return RedirectToAction(nameof(HomeController.Index), "Home");
             }
@@ -342,7 +384,7 @@ namespace GestionCours.Controllers
             {
                 throw new ApplicationException($"Unable to load user with ID '{userId}'.");
             }
-            var result = await _userManager.ConfirmEmailAsync(user, code);
+            var result = await _userManager.ConfirmEmailAsync(user, token);
             return View(result.Succeeded ? "ConfirmEmail" : "Error");
         }
 

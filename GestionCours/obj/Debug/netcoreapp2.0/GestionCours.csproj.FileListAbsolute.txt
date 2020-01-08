@@ -15,10 +15,10 @@ E:\projects\GestionCours\GestionCours\bin\Debug\netcoreapp2.0\GestionCours.runti
 E:\projects\GestionCours\GestionCours\bin\Debug\netcoreapp2.0\GestionCours.runtimeconfig.dev.json
 E:\projects\GestionCours\GestionCours\bin\Debug\netcoreapp2.0\GestionCours.dll
 E:\projects\GestionCours\GestionCours\bin\Debug\netcoreapp2.0\GestionCours.pdb
-E:\projects\GestionCours\GestionCours\obj\Debug\netcoreapp2.0\GestionCours.csprojAssemblyReference.cache
 E:\projects\GestionCours\GestionCours\obj\Debug\netcoreapp2.0\GestionCours.csproj.CoreCompileInputs.cache
 E:\projects\GestionCours\GestionCours\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
 E:\projects\GestionCours\GestionCours\obj\Debug\netcoreapp2.0\GestionCours.AssemblyInfoInputs.cache
 E:\projects\GestionCours\GestionCours\obj\Debug\netcoreapp2.0\GestionCours.AssemblyInfo.cs
 E:\projects\GestionCours\GestionCours\obj\Debug\netcoreapp2.0\GestionCours.dll
 E:\projects\GestionCours\GestionCours\obj\Debug\netcoreapp2.0\GestionCours.pdb
+E:\projects\GestionCours\GestionCours\obj\Debug\netcoreapp2.0\GestionCours.csprojAssemblyReference.cache

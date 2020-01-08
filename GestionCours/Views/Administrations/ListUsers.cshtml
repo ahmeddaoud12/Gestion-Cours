@@ -47,12 +47,29 @@
                                         </li>
                                         <li class="nav-item">
                                             <a asp-action="EditUser" asp-controller="Administrations" asp-route-id="@user.Id" class="nav-link">
-                                                Email Confirmed <span class="float-right badge bg-info padbad">@user.EmailConfirmed</span>
+                                                Email Confirmed
+                                                @if (user.EmailConfirmed == true)
+                                                {
+                                                    <span class="float-right badge bg-success padbad"><i class="far fa-thumbs-up"></i> Confirmer</span>
+                                                }
+                                                else
+                                                {
+                                                    <span class="float-right badge bg-danger padbad"><i class="far fa-clock"></i> En attente</span>
+                                                }
                                             </a>
                                         </li>
                                         <li class="nav-item">
                                             <a asp-action="EditUser" asp-controller="Administrations" asp-route-id="@user.Id" class="nav-link">
-                                                Two Facture Projects <span class="float-right badge bg-success padbad">@user.TwoFactorEnabled</span>
+                                                Two Facture Projects 
+                                                @if (user.TwoFactorEnabled == true)
+                                                {
+                                                    <span class="float-right badge bg-success padbad"><i class="fas fa-unlock"></i> Confirmer</span>
+                                                    <span class="float-right badge bg-success padbad">Activé</span>
+                                                }
+                                                else
+                                                {
+                                                    <span class="float-right badge bg-danger padbad"><i class="fas fa-lock"></i> Désactivé</span>
+                                                }
                                             </a>
                                         </li>
                                         <li class="nav-item">
