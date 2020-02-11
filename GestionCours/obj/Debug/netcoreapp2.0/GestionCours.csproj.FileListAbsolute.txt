@@ -21,4 +21,3 @@ E:\projects\GestionCours\GestionCours\obj\Debug\netcoreapp2.0\GestionCours.Assem
 E:\projects\GestionCours\GestionCours\obj\Debug\netcoreapp2.0\GestionCours.AssemblyInfo.cs
 E:\projects\GestionCours\GestionCours\obj\Debug\netcoreapp2.0\GestionCours.dll
 E:\projects\GestionCours\GestionCours\obj\Debug\netcoreapp2.0\GestionCours.pdb
-E:\projects\GestionCours\GestionCours\obj\Debug\netcoreapp2.0\GestionCours.csprojAssemblyReference.cache
